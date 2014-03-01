@@ -14,7 +14,18 @@ module.exports = function(grunt) {
 
 	grunt.registerMultiTask('similar', 'Suggests which tasks you wanted to call unless you made a typo', function(){
 
+		var defaultOptions = {
+			distance: 3
+		};
+
 		var options = this.options();
+		for (var i in defaultOptions) {
+			if (defaultOptions.hasOwnProperty(i)){
+				if (typeof options[i] === 'undefined'){
+					options[i] = defaultOptions[i];
+			 }
+			}
+		}
 
 		var tasks = Object.keys(grunt.task._tasks)
 		var taskParts = tasks.splice(tasks.length -1 , 1)[0].split(':');
@@ -32,13 +43,16 @@ module.exports = function(grunt) {
 				similarTaskName = tasks[i];
 			}
 		}
-		if (minDistance < 4) {
+		
+		if (minDistance <= options.distance) {
 
 			if (subtaskName){
 				similarTaskName = similarTaskName + ':' + subtaskName;
 			}
 			grunt.task.run(similarTaskName);
 
+		} else {
+			throw new Error('Task "' + cliTask + '" not found.');
 		}
 
 	});

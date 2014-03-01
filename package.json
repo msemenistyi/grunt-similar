@@ -1,6 +1,6 @@
 {
   "name": "grunt-similar",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Suggests which tasks you wanted to call unless you made a typo",
   "main": "index.js",
   "scripts": {

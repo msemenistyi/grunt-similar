@@ -15,10 +15,9 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		similar: {
-			all:{
-				options:{
-					
-				}
+			all: {}, 
+			options:{
+				distance: 3
 			}
 		},
 
@@ -46,7 +45,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-simple-mocha');
 
-	grunt.registerTask('test', ['clean', 'similar', 'simplemocha']);
+	grunt.registerTask('test', ['clean', 'simplemocha']);
 
 	grunt.registerTask('default', ['clean']);
 
