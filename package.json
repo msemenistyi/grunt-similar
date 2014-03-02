@@ -25,7 +25,9 @@
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-simple-mocha": "~0.4.0"
+    "grunt-simple-mocha": "~0.4.0",
+    "should": "~3.1.3",
+    "sinon": "git://github.com/msemenistyi/Sinon.JS"
   },
   "dependencies": {
     "levenshtein-component": "0.0.1"
