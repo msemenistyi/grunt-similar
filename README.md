@@ -50,9 +50,10 @@ module.exports = function(grunt){
 	...
 	//in the very bottom of the file after all the tasks are registered, but still 
 	//within the function being exported. 
-	require('./node_modules/grunt-similar/lib/similar-register')(grunt);
+	require('grunt-similar').attach(grunt);
 }
 ```
+[Example](https://github.com/msemenistyi/grunt-similar/blob/master/Gruntfile.js)
 
 ##Contributing
 Feel free to open issues and send PRs, though make sure that you create tests

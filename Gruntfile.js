@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 		similar: {
 			all: {}, 
 			options:{
-				distance: 3
+				distance: 1
 			}
 		},
 
@@ -49,6 +49,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['clean']);
 
-	require('./lib/similar-register')(grunt);
+	require('./').attach(grunt);
 
 };
